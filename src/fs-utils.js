@@ -1,7 +1,7 @@
 /* eslint no-use-before-define: 0 */
-import Rx from 'rx';
+import Rx from 'rxjs';
 import path from 'path';
-import fsp from 'fs-promise';
+const fsp = require('fs-extra');
 
 function expanddir(dir) {
   let fullDirPath = path.resolve(dir);

@@ -1,4 +1,8 @@
-# bless [![NPM version][npm-image]][npm-url] [![build status][travis-image]][travis-url] [![Dependencies][dependencies-image]][dependencies-url] [![Join the chat at https://gitter.im/BlessCSS/bless][gitter-image]][gitter-url]
+# Actually maintained version of bless
+
+This a fork of [bless](https://github.com/BlessCSS/bless) that is kept up-to-date to be compatible with maintained librarys and work with modern versions of node js. Feature requests won't be accepted, but PRs are always welcome.
+
+---
 
 Sometimes we can't get away from supporting Internet Explorer 9 and below. Unfortunately, this support can sometimes break our css due to [these limitations](http://blogs.msdn.com/b/ieinternals/archive/2011/05/14/10164546.aspx), and when it does break it is almost impossible to track down. How do you get around such a crippling limitation? Well, you can slap this `bless` on top of your css and you should be alright.
 
@@ -75,14 +79,3 @@ See `LICENSE` file.
 
 > Copyright (c) Paul Young
 
-[npm-url]: https://npmjs.org/package/bless
-[npm-image]: http://img.shields.io/npm/v/bless.svg
-
-[travis-url]: https://travis-ci.org/BlessCSS/bless
-[travis-image]: https://travis-ci.org/BlessCSS/bless.svg?branch=master
-
-[dependencies-url]: https://david-dm.org/BlessCSS/bless
-[dependencies-image]: https://david-dm.org/BlessCSS/bless.svg
-
-[gitter-image]: https://badges.gitter.im/Join%20Chat.svg
-[gitter-url]: https://gitter.im/BlessCSS/bless

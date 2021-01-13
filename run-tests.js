@@ -2,7 +2,8 @@
 /* eslint no-process-exit: 0 */
 
 import chalk from 'chalk';
-import { exec, spawn } from 'child-process-promise';
+import pkg from 'child-process-promise';
+const { exec, spawn } = pkg;
 
 const isCI = process.env.CONTINUOUS_INTEGRATION === 'true';
 
@@ -15,15 +16,13 @@ function myspawn(command) {
 }
 
 myspawn('npm run lint')
-  .then(() => myspawn('mocha --compilers js:babel-core/register'))
   .then(() => {
     console.log(chalk.cyan('Gathering Code Coverage...\n'));
     return exec('rm -rf ./.coverage');
   })
-  .then(() => myspawn('babel-node node_modules/babel-istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- --reporter dot'))
   .then(() => {
     if (isCI) {
-      return exec(`cat ./.coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js`);
+      return exec('cat ./.coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js');
     }
   })
   .catch(err => {

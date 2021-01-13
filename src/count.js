@@ -1,5 +1,5 @@
 /* eslint no-use-before-define: 0 */
-import fsp from 'fs-promise';
+const fsp = require('fs-extra');
 import css from 'css';
 import { SELECTOR_LIMIT } from './constants';
 import { expand } from './fs-utils';

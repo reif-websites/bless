@@ -1,4 +1,4 @@
-import fsp from 'fs-promise';
+const fsp = require('fs-extra');
 import chunker from './chunk';
 import _ from 'lodash';
 

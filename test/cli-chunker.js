@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import fs from 'fs';
-import fsp from 'fs-promise';
+const fsp = require('fs-extra');
 import path from 'path';
 import chunk from '../src/chunk';
 import _ from 'lodash';

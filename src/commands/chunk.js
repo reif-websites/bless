@@ -4,13 +4,13 @@ import common from './common-yargs';
 import { chunkFile } from '../index';
 import path from 'path';
 import fs from 'fs';
-import fsp from 'fs-promise';
+const fsp = require('fs-extra');
 import { ensureDir, expand } from '../fs-utils';
 
 async function executeChunk(input, outputDir, chunkOptions) {
   let basename = path.basename(input, '.css');
 
-  const {data, maps, totalSelectorCount} = await chunkFile(input, chunkOptions);
+  const {data, maps} = await chunkFile(input, chunkOptions);
 
   let chunkData = data.map((ast, index) => {
     let outputFilename = path.join(outputDir, `${basename}.${index}.css`);
